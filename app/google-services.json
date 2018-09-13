@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1062316339422",
+    "firebase_url": "https://blindhelper-e8f75.firebaseio.com",
+    "project_id": "blindhelper-e8f75",
+    "storage_bucket": "blindhelper-e8f75.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1062316339422:android:f5c821536824399e",
+        "android_client_info": {
+          "package_name": "com.coltec.cfgs.blindhelper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1062316339422-3sppflbvbqdobdoppiq23sn5b7d14nbv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.coltec.cfgs.blindhelper",
+            "certificate_hash": "7e5de28fc3c0938a777e75f76e52c955325f3ae4"
+          }
+        },
+        {
+          "client_id": "1062316339422-dak63iubkqe44eudoessbpv84nj1j2m0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsGhFPV9cRxAGXLYTkOQ0rglSLLZyS_qU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1062316339422-dak63iubkqe44eudoessbpv84nj1j2m0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
