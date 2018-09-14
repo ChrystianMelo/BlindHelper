@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         final EditText user = findViewById(R.id.txt_user);
         final EditText pass = findViewById(R.id.txt_pass);
         Button btn_Sign = findViewById(R.id.btn_sign);
