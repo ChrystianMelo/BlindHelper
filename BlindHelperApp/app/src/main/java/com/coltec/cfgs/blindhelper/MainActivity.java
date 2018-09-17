@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,23 +18,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        final EditText user = findViewById(R.id.txt_user);
-        final EditText pass = findViewById(R.id.txt_pass);
-        Button btn_Sign = findViewById(R.id.btn_sign);
-
-        btn_Sign.setOnClickListener(new View.OnClickListener() {
+        Button btn_bluetooth = findViewById(R.id.btn_bluetooth);
+        btn_bluetooth.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, InterfaceActivity.class);
-                // cria o bundle e o insere na nova Intent
-                Bundle args = new Bundle();
-                args.putString("Nome", user.getText().toString());
-                EditText edittext = (EditText)findViewById(R.id.txt_pass);
-                edittext.setTransformationMethod(new AsteriskPasswordTransformationMethod());
-
-                intent.putExtras(args);
-
-                startActivity(intent);//login tela
+            public void onClick(View view) {
+                Intent bluetooth = new Intent(MainActivity.this, Bluetooth.class);
+                startActivity(bluetooth);//bluetooth tela
             }
         });
 
