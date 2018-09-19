@@ -4,71 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.coltec.cfgs.blindhelper.Bluetooth"
-    android:background="#000">
-
+    tools:context=".Bluetooth">
 
     <TextView
         android:id="@+id/lbl_status"
+        android:textSize="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="iniciando"
-        android:textSize="25dp"
-        android:textColor="#fff"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="iniciando" />
 
     <Button
         android:id="@+id/btn_paired"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="203dp"
-        android:background="#811eb6"
-        android:text="pareados"
-        android:textColor="#fff" />
+        android:layout_below="@+id/lbl_status"
+        android:layout_marginTop="26dp"
+        android:text="pareados" />
 
     <Button
         android:id="@+id/btn_search"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="234dp"
-        android:background="#811eb6"
-        android:text="buscar"
-        android:textColor="#fff"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_paired"
+        android:layout_alignBottom="@+id/btn_paired"
+        android:layout_marginStart="6dp"
+        android:layout_toEndOf="@+id/btn_paired"
+        android:text="buscar" />
 
     <Button
         android:id="@+id/btn_visibility"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/btn_paired"
         android:layout_marginTop="12dp"
-        android:text="visibilidade"
-        android:background="#811eb6"
-        android:textColor="#fff"/>
+        android:text="visibilidade" />
 
     <Button
         android:id="@+id/btn_connect_client"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/btn_paired"
-        android:background="#811eb6"
-        android:text="conectar"
-        android:textColor="#fff"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_search"
+        android:layout_alignBottom="@+id/btn_search"
+        android:layout_marginStart="6dp"
+        android:layout_toEndOf="@+id/btn_search"
+        android:text="conectar" />
 
     <Button
         android:id="@+id/btn_connect_server"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/btn_visibility"
-        android:background="#811eb6"
-        android:text="esperar conexão"
-        android:textColor="#fff"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_visibility"
+        android:layout_alignBottom="@+id/btn_visibility"
+        android:layout_alignEnd="@+id/btn_connect_client"
+        android:text="esperar conexão" />
+
+    <TextView
+        android:id="@+id/output_text"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="33dp" />
 
 
 </RelativeLayout>

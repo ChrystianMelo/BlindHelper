@@ -1,11 +1,13 @@
 package com.coltec.cfgs.blindhelper;
-
 import android.bluetooth.BluetoothAdapter;
+import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,12 +25,16 @@ public class Bluetooth extends AppCompatActivity {
     public Button btn_visibility;
     public Button btn_connect_client;
     public Button btn_connect_server;
+    public Button btn_send;
     public static TextView output_text;
+    public static Context mContext;
     public static  String output_text_string = "";
     public EditText input_text;
     public String macSelected = "";
 
     public static Handler handler = new Handler() {
+        String msn = "nada";
+
         @Override
         public void handleMessage(Message msg) {
 
@@ -43,21 +49,35 @@ public class Bluetooth extends AppCompatActivity {
             else {
                 output_text_string += "ele: " + dataString + "\n";
                 output_text.setText(output_text_string);
+                this.msn = dataString;
+                Bluetooth.verify(this.msn);//a cada msn confiro se é oq eu espero
             }
         }
     };
+
+    public static void verify(String x){
+        if (x.equals("gemi.")) {
+            MediaPlayer ring = MediaPlayer.create(mContext, R.raw.gemi);
+            ring.start();
+        }
+        Log.i("RECEBIDO", x);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bluetooth);
 
+        mContext = getApplicationContext();
         statusMessage = findViewById(R.id.lbl_status);
         btn_paired = findViewById(R.id.btn_paired);
         btn_search = findViewById(R.id.btn_search);
         btn_visibility = findViewById(R.id.btn_visibility);
         btn_connect_client = findViewById(R.id.btn_connect_client);
         btn_connect_server = findViewById(R.id.btn_connect_server);
+        //btn_send = findViewById(R.id.btn_send);
+        //input_text = findViewById(R.id.input_text);
+        output_text = findViewById(R.id.output_text);
 
         BluetoothAdapter btAdapter = BluetoothAdapter.getDefaultAdapter();
         if (btAdapter == null) {
@@ -110,7 +130,12 @@ public class Bluetooth extends AppCompatActivity {
             }
         });
 
-        //sendMessage();
+        /*btn_send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendMessage();
+            }
+        });*/
     }
 
     @Override
@@ -163,18 +188,11 @@ public class Bluetooth extends AppCompatActivity {
     }
 
     /*public void sendMessage() {
-        leitura
-        if (leitura == 1)//esq
-            MediaPlayer ring= MediaPlayer.create(InterfaceActivity.this,R.raw.left);
-        else if (leitura == 2)//esq+encima
-            MediaPlayer ring= MediaPlayer.create(InterfaceActivity.this,R.raw.leftup);
-        else if (leitura == 3)
-            .
-            .
-            .
-        else
-            MediaPlayer ring= MediaPlayer.create(InterfaceActivity.this,R.raw.error);
-        ring.start();
-
+        String msg = input_text.getText().toString();
+        output_text_string += "você: " + msg + "\n";
+        output_text.setText(output_text_string);
+        input_text.setText("");
+        byte[] data = msg.getBytes();
+        connection.write(data);
     }*/
 }

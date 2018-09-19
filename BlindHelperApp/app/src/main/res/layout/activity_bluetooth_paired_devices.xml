@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.coltec.cfgs.blindhelper.BluetoothPairedDevices"
-    android:background="#000">
+    tools:context=".BluetoothPairedDevices">
 
 </android.support.constraint.ConstraintLayout>

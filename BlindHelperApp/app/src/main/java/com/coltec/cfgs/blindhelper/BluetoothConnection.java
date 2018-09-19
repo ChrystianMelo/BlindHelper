@@ -1,5 +1,4 @@
 package com.coltec.cfgs.blindhelper;
-
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothServerSocket;
