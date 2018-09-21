@@ -1,7 +1,7 @@
 package com.coltec.cfgs.blindhelper;
 
 /**
- * Created by Chrystian
+ * Developed by Chrystian Melo
  */
 
 import android.content.Intent;

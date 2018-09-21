@@ -1,4 +1,5 @@
 package com.coltec.cfgs.blindhelper;
+
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.Intent;
@@ -7,10 +8,16 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+/**
+ * Created by Dener.
+ * Adapted by Chrystian Melo
+ */
 
 public class Bluetooth extends AppCompatActivity {
 
@@ -46,6 +53,7 @@ public class Bluetooth extends AppCompatActivity {
             else if(dataString.equals("---S"))
                 statusMessage.setText("Conectado :D");
             else {
+                output_text.setMovementMethod(new ScrollingMovementMethod());
                 output_text_string += "ele: " + dataString + "\n";
                 output_text.setText(output_text_string);
                 this.msn = dataString;

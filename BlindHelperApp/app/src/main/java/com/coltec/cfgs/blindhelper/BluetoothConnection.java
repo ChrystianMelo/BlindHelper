@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.UUID;
 
 /**
- * Created by Dener on 02/09/2018.
+ * Developed by Dener.
  */
 
 public class BluetoothConnection extends Thread {

@@ -1,4 +1,10 @@
 package com.coltec.cfgs.blindhelper;
+
+/**
+ * Developed by Dener.
+ */
+
+
 import android.app.ListActivity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
