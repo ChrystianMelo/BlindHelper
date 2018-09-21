@@ -7,7 +7,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -56,13 +55,19 @@ public class Bluetooth extends AppCompatActivity {
     };
 
     public static void verify(String x){
-        if (x.equals("gemi.")) {
-            MediaPlayer ring = MediaPlayer.create(mContext, R.raw.gemi);
-            ring.start();
-        }
-        Log.i("RECEBIDO", x);
+        if (x.equals("0")) //obstaculo à esquerda
+            MediaPlayer.create(mContext, R.raw.ob_esq).start();
+        else if(x.equals("1"))//obstaculo à direira
+            MediaPlayer.create(mContext, R.raw.ob_dir).start();
+        else if(x.equals("2"))//obstaculo frente
+            MediaPlayer.create(mContext, R.raw.ob_fren).start();
+        else if(x.equals("3"))//obstaculo abaixo
+            MediaPlayer.create(mContext, R.raw.ob_abai).start();
+        else if(x.equals("4"))//vire à Esq
+            MediaPlayer.create(mContext, R.raw.vir_esq).start();
+        else if(x.equals("5")) //vire à Dir
+            MediaPlayer.create(mContext, R.raw.vir_dir).start();
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
