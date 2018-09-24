@@ -26,16 +26,9 @@ public class Bluetooth extends AppCompatActivity {
     public static int SELECT_DISCOVERED_DEVICE = 3;
     public static TextView statusMessage;
     public BluetoothConnection connection;
-    public Button btn_paired;
-    public Button btn_search;
-    public Button btn_visibility;
-    public Button btn_connect_client;
-    public Button btn_connect_server;
-    public Button btn_send;
     public static TextView output_text;
     public static Context mContext;
     public static  String output_text_string = "";
-    public EditText input_text;
     public String macSelected = "";
 
     public static Handler handler = new Handler() {
@@ -51,7 +44,7 @@ public class Bluetooth extends AppCompatActivity {
             if(dataString.equals("---N"))
                 statusMessage.setText("Ocorreu um erro durante a conexão D:");
             else if(dataString.equals("---S"))
-                statusMessage.setText("Conectado :D");
+                statusMessage.setText("Funcionando perfeitamente");
             else {
                 output_text.setMovementMethod(new ScrollingMovementMethod());
                 output_text_string += "ele: " + dataString + "\n";
@@ -83,18 +76,14 @@ public class Bluetooth extends AppCompatActivity {
 
         mContext = getApplicationContext();
         statusMessage = findViewById(R.id.lbl_status);
-        btn_paired = findViewById(R.id.btn_paired);
-        btn_search = findViewById(R.id.btn_search);
-        btn_visibility = findViewById(R.id.btn_visibility);
-        btn_connect_client = findViewById(R.id.btn_connect_client);
-        btn_connect_server = findViewById(R.id.btn_connect_server);
-        //btn_send = findViewById(R.id.btn_send);
-        //input_text = findViewById(R.id.input_text);
         output_text = findViewById(R.id.output_text);
+
+        this.macSelected = "D4:63:C6:86:22:D1";//samuel's phone
+        connectAsClient();// connecting bluetooth
 
         BluetoothAdapter btAdapter = BluetoothAdapter.getDefaultAdapter();
         if (btAdapter == null) {
-            statusMessage.setText("Que pena! Hardware Bluetooth não está funcionando :(");
+            statusMessage.setText("Que pena! Hardware Bluetooth não está funcionando...TENTE REINICIAR O APP :(");
             return;
         } else {
             statusMessage.setText("Ótimo! Hardware Bluetooth está funcionando :)");
@@ -108,47 +97,6 @@ public class Bluetooth extends AppCompatActivity {
             statusMessage.setText("Bluetooth está pronto para ser usado :)");
         }
 
-        btn_paired.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                searchPairedDevices();
-            }
-        });
-
-        btn_search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                discoverDevices();
-            }
-        });
-
-        btn_visibility.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                enableVisibility();
-            }
-        });
-
-        btn_connect_client.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                connectAsClient();
-            }
-        });
-
-        btn_connect_server.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                connectAsServer();
-            }
-        });
-
-        /*btn_send.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sendMessage();
-            }
-        });*/
     }
 
     @Override
@@ -165,28 +113,12 @@ public class Bluetooth extends AppCompatActivity {
             if(resultCode == RESULT_OK) {
                 statusMessage.setText("Você selecionou " + data.getStringExtra("btDevName") + "\n"
                         + data.getStringExtra("btDevAddress"));
-                macSelected = data.getStringExtra("btDevAddress");
+                //macSelected = data.getStringExtra("btDevAddress");
             }
             else {
                 statusMessage.setText("Nenhum dispositivo selecionado :(");
             }
         }
-    }
-
-    public void searchPairedDevices() {
-        Intent searchPairedDevicesIntent = new Intent(this, BluetoothPairedDevices.class);
-        startActivityForResult(searchPairedDevicesIntent, SELECT_PAIRED_DEVICE);
-    }
-
-    public void discoverDevices() {
-        Intent searchPairedDevicesIntent = new Intent(this, BluetoothDiscoveredDevices.class);
-        startActivityForResult(searchPairedDevicesIntent, SELECT_DISCOVERED_DEVICE);
-    }
-
-    public void enableVisibility() {
-        Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
-        discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 30);
-        startActivity(discoverableIntent);
     }
 
     public void connectAsClient() {
@@ -195,17 +127,4 @@ public class Bluetooth extends AppCompatActivity {
         connection.start();
     }
 
-    public void connectAsServer() {
-        connection = new BluetoothConnection();
-        connection.start();
-    }
-
-    /*public void sendMessage() {
-        String msg = input_text.getText().toString();
-        output_text_string += "você: " + msg + "\n";
-        output_text.setText(output_text_string);
-        input_text.setText("");
-        byte[] data = msg.getBytes();
-        connection.write(data);
-    }*/
 }

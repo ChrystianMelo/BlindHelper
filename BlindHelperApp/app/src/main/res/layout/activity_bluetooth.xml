@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBack"
     tools:context=".Bluetooth">
 
     <TextView
@@ -11,65 +12,37 @@
         android:textSize="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textColor="#fff"
         android:text="iniciando" />
 
-    <Button
-        android:id="@+id/btn_paired"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/lbl_status"
-        android:layout_marginTop="26dp"
-        android:text="pareados" />
 
-    <Button
-        android:id="@+id/btn_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btn_paired"
-        android:layout_alignBottom="@+id/btn_paired"
-        android:layout_marginStart="6dp"
-        android:layout_toEndOf="@+id/btn_paired"
-        android:text="buscar" />
 
-    <Button
-        android:id="@+id/btn_visibility"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/btn_paired"
-        android:layout_marginTop="12dp"
-        android:text="visibilidade" />
 
-    <Button
-        android:id="@+id/btn_connect_client"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btn_search"
-        android:layout_alignBottom="@+id/btn_search"
-        android:layout_marginStart="6dp"
-        android:layout_toEndOf="@+id/btn_search"
-        android:text="conectar" />
+    <!--
+        Text View just to see what is being received[not necesssary]
+    -->
 
-    <Button
-        android:id="@+id/btn_connect_server"
+    <!--TextView
+        android:id="@+id/lbl_saidas"
+        android:textSize="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btn_visibility"
-        android:layout_alignBottom="@+id/btn_visibility"
-        android:layout_alignEnd="@+id/btn_connect_client"
-        android:text="esperar conexão" />
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/output_text"
+        android:text="Saída" /-->
+
 
     <TextView
         android:id="@+id/output_text"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="86dp"
+        android:textColor="@color/colorBack"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:scrollbars = "vertical"
-        android:layout_marginBottom="33dp" />
+        android:layout_marginBottom="33dp"
+        android:scrollbars="vertical" />
 
 
 </RelativeLayout>
