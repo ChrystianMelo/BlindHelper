@@ -3,6 +3,7 @@ package com.coltec.cfgs.blindhelper;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.os.Message;
@@ -14,9 +15,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Stack;
+
 /**
- * Created by Dener.
- * Adapted by Chrystian Melo
+ *  Developed by Chrystian Melo
  */
 
 public class Bluetooth extends AppCompatActivity {
@@ -29,7 +31,6 @@ public class Bluetooth extends AppCompatActivity {
     public static TextView output_text;
     public static Context mContext;
     public static  String output_text_string = "";
-    public String macSelected = "";
 
     public static Handler handler = new Handler() {
         String msn = "nada";
@@ -78,8 +79,13 @@ public class Bluetooth extends AppCompatActivity {
         statusMessage = findViewById(R.id.lbl_status);
         output_text = findViewById(R.id.output_text);
 
-        this.macSelected = "D4:63:C6:86:22:D1";//samuel's phone
-        connectAsClient();// connecting bluetooth
+        //String macSelected = "D4:63:C6:86:22:D1";//samuel's phone
+        //connectAsClient(macSelected);
+
+        // recupera dado do bundle
+        Bundle activityBundle = this.getIntent().getExtras();
+        String st = activityBundle.getString("Mac_Address","");
+        connectAsClient(st);// connecting bluetooth
 
         BluetoothAdapter btAdapter = BluetoothAdapter.getDefaultAdapter();
         if (btAdapter == null) {
@@ -92,9 +98,9 @@ public class Bluetooth extends AppCompatActivity {
         if(!btAdapter.isEnabled()) {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, ENABLE_BLUETOOTH);
-            statusMessage.setText("Solicitando ativação do Bluetooth...");
+            statusMessage.setText("Ativando Bluetooth...");
         } else {
-            statusMessage.setText("Bluetooth está pronto para ser usado :)");
+            statusMessage.setText("Bluetooth está ativado :)");
         }
 
     }
@@ -121,7 +127,7 @@ public class Bluetooth extends AppCompatActivity {
         }
     }
 
-    public void connectAsClient() {
+    public void connectAsClient(String macSelected) {
         System.out.println(macSelected);
         connection = new BluetoothConnection(macSelected);
         connection.start();

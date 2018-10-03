@@ -19,10 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".InterfaceActivity"></activity>
         <activity android:name=".Bluetooth" />
-        <activity android:name=".BluetoothPairedDevices" />
-        <activity android:name=".BluetoothDiscoveredDevices"></activity>
+        <activity android:name=".Bluetooth2" />
+
+
     </application>
 
 </manifest>
