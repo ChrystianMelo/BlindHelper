@@ -54,13 +54,8 @@ void loop() {
   else if(sBaixo >= bAnt + HOLE) state = 3;
   else if(sBaixo <= bAnt - STEP) state = 4;
   bAnt = sBaixo;
-
-  Serial.println(sFrente);
-  Serial.println(sBaixo);
-  Serial.println(sDir);
-  Serial.println(sEsq);
+  
   sendMessage();
-  delay(1000);
 }
 
 void sendMessage() {
