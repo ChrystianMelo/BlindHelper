@@ -28,13 +28,10 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     Intent bluetooth = new Intent(MainActivity.this, Bluetooth.class);
-
                     // cria o bundle e o insere na nova Intent
                     Bundle args = new Bundle();
                     args.putString("Mac_Address", pref.getString("Mac_Address",""));
-
                     bluetooth.putExtras(args);
-
                     startActivity(bluetooth);//bluetooth tela
                     finish();
                 }

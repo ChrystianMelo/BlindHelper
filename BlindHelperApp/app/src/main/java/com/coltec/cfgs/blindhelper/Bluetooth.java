@@ -31,6 +31,7 @@ public class Bluetooth extends AppCompatActivity {
     public static TextView output_text;
     public static Context mContext;
     public static  String output_text_string = "";
+    private static String macSelected = "BlindHelper";
 
     public static Handler handler = new Handler() {
         String msn = "nada";
@@ -75,17 +76,13 @@ public class Bluetooth extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bluetooth);
 
+        final SharedPreferences pref = getApplicationContext().getSharedPreferences(Bluetooth.macSelected, 0);
+
+
         mContext = getApplicationContext();
         statusMessage = findViewById(R.id.lbl_status);
         output_text = findViewById(R.id.output_text);
 
-        //String macSelected = "D4:63:C6:86:22:D1";//samuel's phone
-        //connectAsClient(macSelected);
-
-        // recupera dado do bundle
-        Bundle activityBundle = this.getIntent().getExtras();
-        String st = activityBundle.getString("Mac_Address","");
-        connectAsClient(st);// connecting bluetooth
 
         BluetoothAdapter btAdapter = BluetoothAdapter.getDefaultAdapter();
         if (btAdapter == null) {
@@ -102,6 +99,17 @@ public class Bluetooth extends AppCompatActivity {
         } else {
             statusMessage.setText("Bluetooth está ativado :)");
         }
+
+        // recupera dado do bundle
+        Bundle activityBundle = this.getIntent().getExtras();
+        String st = activityBundle.getString("Mac_Address","");
+
+        // salva uma série de atributos no SharedPreferences
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("Mac_Address", st);
+        editor.commit();
+
+        connectAsClient(st);// connecting bluetooth
 
     }
 
