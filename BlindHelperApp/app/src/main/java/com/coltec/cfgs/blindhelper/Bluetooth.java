@@ -58,18 +58,18 @@ public class Bluetooth extends AppCompatActivity {
     };
 
     public static void verify(String x){
-        if (x.equals("0")) //obstaculo à esquerda
-            MediaPlayer.create(mContext, R.raw.ob_esq).start();
-        else if(x.equals("1"))//obstaculo à direira
-            MediaPlayer.create(mContext, R.raw.ob_dir).start();
-        else if(x.equals("2"))//obstaculo frente
-            MediaPlayer.create(mContext, R.raw.ob_fren).start();
-        else if(x.equals("3"))//obstaculo abaixo
-            MediaPlayer.create(mContext, R.raw.ob_abai).start();
-        else if(x.equals("4"))//vire à Esq
-            MediaPlayer.create(mContext, R.raw.vir_esq).start();
-        else if(x.equals("5")) //vire à Dir
+        if (x.equals("0")) //siga em frente
+            MediaPlayer.create(mContext, R.raw.siga_frente).start();
+        else if(x.equals("1"))//Vire direita
             MediaPlayer.create(mContext, R.raw.vir_dir).start();
+        else if(x.equals("2"))//Vire esq
+            MediaPlayer.create(mContext, R.raw.vir_esq).start();
+        else if(x.equals("3"))//Buraco
+            MediaPlayer.create(mContext, R.raw.buraco).start();
+        else if(x.equals("4"))//Degrau
+            MediaPlayer.create(mContext, R.raw.degrau).start();
+        else if(x.equals("5")) //Sem saida
+            MediaPlayer.create(mContext, R.raw.sem_saida).start();
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
