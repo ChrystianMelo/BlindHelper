@@ -25,9 +25,22 @@
         android:layout_marginBottom="143dp"
         android:background="#811eb6"
         android:fontFamily="serif"
-        android:text="Conectar! "
+        android:text="Connect! "
         android:textColor="#fff"
         android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/btn_accnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_bluetooth"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-133dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="serif"
+        android:text="Sign up "
+        android:textColor="#fff"
+        android:textSize="20dp" />
 
 
 </RelativeLayout>
