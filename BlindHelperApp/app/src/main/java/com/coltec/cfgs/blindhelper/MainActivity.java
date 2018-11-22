@@ -52,15 +52,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-
-        Button btn_account = findViewById(R.id.btn_accnt);
-        btn_account.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent sign = new Intent(MainActivity.this, Signing.class);
-                startActivity(sign);//bluetooth tela
-                finish();
-            }
-        });
     }
 }

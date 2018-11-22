@@ -25,7 +25,6 @@
         </activity>
         <activity android:name=".Bluetooth" />
         <activity android:name=".Bluetooth2" />
-        <activity android:name=".Signing" />
         <activity android:name=".BluetoothDiscoveredDevices" />
 
 
