@@ -13,19 +13,19 @@
         android:layout_height="185dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="72dp"
-        app:srcCompat="@drawable/icon" />
+        android:layout_marginTop="150dp"
+        app:srcCompat="@drawable/logo" />
 
     <Button
         android:id="@+id/btn_bluetooth"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="143dp"
-        android:background="#811eb6"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:layout_below="@id/imageView"
+        android:background="@color/pattern"
         android:fontFamily="serif"
-        android:text="Connect! "
+        android:text="Connect"
         android:textColor="#fff"
         android:textSize="30dp" />
 
