@@ -29,16 +29,7 @@ Blind Helper introduces a wearable device that attaches to the user's chest. Thi
 3. Begin your journey, and the sensors will detect obstacles.
 4. The mobile app will provide real-time audio guidance to navigate safely.
 
-## 6. Getting Started
-
-To start using Blind Helper, follow these steps:
-
-1. Clone this repository.
-2. Install the Blind Helper mobile app on your smartphone.
-3. Connect the app to the Blind Helper device via Bluetooth.
-4. Put on the device and follow the audio instructions for safe navigation.
-
-## 7. Technologies Used
+## 6. Technologies Used
 
 - **Hardware:** Custom wearable device with four distance sensors
 - **Software:** Android/iOS mobile application, Bluetooth communication
