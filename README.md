@@ -1,5 +1,13 @@
 # Blind Helper
 
+## Table of Contents
+1. [Introduction](#1-introduction)
+2. [Market Need](#2-market-need)
+3. [Idea Description](#3-idea-description)
+4. [Features](#4-features)
+5. [How It Works](#5-how-it-works)
+6. [Technologies Used](#6-technologies-used)
+
 ## 1. Introduction
 
 This repository aims to propose an innovative and technological solution to aid visually impaired individuals in their mobility. By combining cutting-edge sensors and a user-friendly mobile application, Blind Helper intends to enhance the navigation experience for those with visual impairments.
@@ -35,3 +43,4 @@ Blind Helper introduces a wearable device that attaches to the user's chest. Thi
 - **Software:** Android application for user interface and Bluetooth communication
 - **Programming Languages:** Java (Android)
 
+[Watch the Project Video](https://www.youtube.com/watch?v=your_video_id)
