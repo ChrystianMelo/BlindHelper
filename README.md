@@ -31,6 +31,7 @@ Blind Helper introduces a wearable device that attaches to the user's chest. Thi
 
 ## 6. Technologies Used
 
-- **Hardware:** Custom wearable device with four distance sensors
-- **Software:** Android/iOS mobile application, Bluetooth communication
-- **Programming Languages:** Java (Android), Swift (iOS)
+- **Hardware:** Custom wearable device with four ultrasonic sensors
+- **Software:** Android application for user interface and Bluetooth communication
+- **Programming Languages:** Java (Android)
+
