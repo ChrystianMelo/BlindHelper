@@ -43,4 +43,4 @@ Blind Helper introduces a wearable device that attaches to the user's chest. Thi
 - **Software:** Android application for user interface and Bluetooth communication
 - **Programming Languages:** Java (Android)
 
-[Watch the Project Video](https://www.youtube.com/watch?v=your_video_id)
+[Watch the Project Video](https://www.youtube.com/watch?v=4kAlkIh1Kjo&t=4s)
